@@ -35,7 +35,7 @@ class PoolV3:
         self.token1 = ERC20Token(self.w3, self.token1_address)
         self.k = self.token0.decimals - self.token1.decimals
 
-    def encode_address(self, zto=False):
+    def encode_address(self, zto=True):
         pool_int = Web3.to_int(hexstr=self.address)
         if not zto:
             pool_int = pool_int | (1 << 255)
